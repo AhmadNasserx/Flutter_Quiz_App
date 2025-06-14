@@ -14,6 +14,7 @@ class StartScreen extends StatelessWidget {
             width: 260,
             height: 260,
             fit: BoxFit.contain,
+            color: const Color.fromARGB(159, 255, 255, 255)
           ),
           const SizedBox(height: 50), // more space pushing text down
           const Text(
@@ -26,7 +27,7 @@ class StartScreen extends StatelessWidget {
             textAlign: TextAlign.center,
           ),
           const SizedBox(height: 20),
-          ElevatedButton(
+          ElevatedButton.icon(
             onPressed: () {
               print('Button pressed!');
             },
@@ -35,7 +36,8 @@ class StartScreen extends StatelessWidget {
                   const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
               textStyle: const TextStyle(fontSize: 18),
             ),
-            child: const Text('Start Quiz'),
+            icon: Icon(Icons.keyboard_double_arrow_right_outlined),
+            label: const Text('Start Quiz'),
           ),
         ],
       ),
