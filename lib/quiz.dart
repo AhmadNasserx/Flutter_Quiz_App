@@ -27,17 +27,20 @@ class _QuizState extends State<Quiz> {
     });
   }
 
-  void chooseAnswer(String answer) {
-    selectedAnswers.add(answer);
+void chooseAnswer(String answer) {
+  selectedAnswers.add(answer);
 
-    if (selectedAnswers.length == questions.length) {
-      setState(() {
-        activeScreen = ResultsScreen(
-           selectedAnswers,
-        );
-      });
-    }
+  if (selectedAnswers.length == questions.length) {
+    setState(() {
+      activeScreen = ResultsScreen(
+        selectedAnswers,
+        restartQuiz,
+      );
+    });
   }
+  print(selectedAnswers); // Add this temporarily to confirm data
+
+}
 
   void restartQuiz() {
     setState(() {
